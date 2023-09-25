@@ -18,13 +18,13 @@ void f_add(stack_t **head, unsigned int counter)
 	}
 	if (len < 2)
 	{
-		fprint(stderr "L%d: can't add, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
 		fclose(bus.file);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
-	aux = h->n + h->next;
+	aux = h->n + h->next->n;
 	h->next->n = aux;
 	*head = h->next;
 	free(h);

@@ -32,10 +32,10 @@ void f_mod(stack_t **head, unsigned int counter)
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
-		ezit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	aux = h->next->n % h->n;
-	h->next->next = aux;
+	h->next->n = aux;
 	*head = h->next;
 	free(h);
 }

@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprint(stderr, "USAGE; monty file\n");
+		fprintf(stderr, "USAGE; monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		content++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, countee, file);
+			execute(content, &stack, counter, file);
 		}
 		free(content);
 	}
